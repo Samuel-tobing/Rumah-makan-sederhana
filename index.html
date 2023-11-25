@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Form Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        h2 {
+            color: #4CAF50; 
+            margin-bottom: 20px;
+        }
+
+        form {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            padding: 20px;
+            max-width: 300px;
+            margin: 50px auto 0;
+            position: relative;
+        }
+
+        .custom-label {
+            color: #4CAF50;
+            font-weight: bold;
+            display: block;
+            text-align: left;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        #message {
+            color: #f00;
+        }
+
+        #formImage {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            overflow: hidden; 
+        }
+
+        #formImage img {
+            width: 100%; 
+            height: 100%; 
+            object-fit: cover;
+        }
+    </style>
+</head>
+
+<body>
+    <form id="loginForm">
+        <h2>My Product Login</h2>
+        <div id="formImage">
+            <img src="liu kang.jpg" alt="User Image">
+        </div>
+        <label for="username" class="custom-label">Username:</label>
+        <input type="text" id="username" name="username" required><br><br>
+
+        <label for="password" class="custom-label">Password:</label>
+        <input type="password" id="password" name="password" required><br><br>
+
+        <input type="submit" value="Login">
+    </form>
+
+    <p id="message"></p>
+
+    <script>
+        document.getElementById("loginForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+           
+            const validUsername = "admin";
+            const validPassword = "admin123";
+
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+
+            if (username === validUsername && password === validPassword) {
+                // Redirect ke halaman lain (ganti URL sesuai kebutuhan)
+                window.location.href = "Ulangan Samuel.html";
+            } else {
+                document.getElementById("message").innerHTML = "Username atau password salah. Silakan coba lagi.";
+            }
+        });
+    </script>
+</body>
+
+</html>
